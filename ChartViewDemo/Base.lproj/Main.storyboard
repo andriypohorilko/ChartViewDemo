@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Glucose Trend View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="GlucoseTrendViewController" customModule="ChartViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ah1-vN-GVV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rni-IY-wun">
+                                <rect key="frame" x="67.5" y="94" width="279" height="32"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kj4-TY-Cqj" userLabel="Period Stack View">
+                                        <rect key="frame" x="0.0" y="0.0" width="279" height="32"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i4S-78-rEv" customClass="ChartTimeButton" customModule="Wear2B_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="93" height="32"/>
+                                                <accessibility key="accessibilityConfiguration" label="Last 8 hours"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="JzP-uV-ZCZ"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="93" id="oOm-RJ-tuT"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                <state key="normal" title="Last 8 h"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tNm-AF-tTf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fN-Zs-BTK" userLabel="Last24h Button" customClass="ChartTimeButton" customModule="Wear2B_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="93" y="0.0" width="93" height="32"/>
+                                                <accessibility key="accessibilityConfiguration" label="Last 24 hours"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="hGE-Xn-kAX"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                <state key="normal" title="Last 24 h"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zet-M8-2oy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeX-2r-Pcj" customClass="ChartTimeButton" customModule="Wear2B_iOS" customModuleProvider="target">
+                                                <rect key="frame" x="186" y="0.0" width="93" height="32"/>
+                                                <accessibility key="accessibilityConfiguration" label="Last Week"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="32" id="rjT-jl-gsj"/>
+                                                </constraints>
+                                                <inset key="titleEdgeInsets" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
+                                                <state key="normal" title="Last week"/>
+                                                <connections>
+                                                    <action selector="buttonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lfb-VQ-BHy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="i4S-78-rEv" firstAttribute="width" secondItem="2fN-Zs-BTK" secondAttribute="width" id="d3S-yH-ZQT"/>
+                                            <constraint firstItem="2fN-Zs-BTK" firstAttribute="width" secondItem="IeX-2r-Pcj" secondAttribute="width" id="n8S-0l-4iR"/>
+                                            <constraint firstAttribute="height" constant="32" id="yNl-8p-lo2"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" name="grayBackground"/>
+                                <constraints>
+                                    <constraint firstItem="kj4-TY-Cqj" firstAttribute="top" secondItem="Rni-IY-wun" secondAttribute="top" id="0v7-yc-frT"/>
+                                    <constraint firstAttribute="bottom" secondItem="kj4-TY-Cqj" secondAttribute="bottom" id="HNg-rV-O1d"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="750" constant="279" id="MwP-WY-x2t"/>
+                                    <constraint firstItem="kj4-TY-Cqj" firstAttribute="leading" secondItem="Rni-IY-wun" secondAttribute="leading" id="bEF-Td-Gog"/>
+                                    <constraint firstAttribute="trailing" secondItem="kj4-TY-Cqj" secondAttribute="trailing" id="fgR-GC-1le"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xpn-SM-Q9r" customClass="ChartView" customModule="Wear2B_iOS" customModuleProvider="target">
+                                <rect key="frame" x="10" y="155.5" width="394" height="582.5"/>
+                                <accessibility key="accessibilityConfiguration" label="Glucose Chart">
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xpn-SM-Q9r" firstAttribute="leading" secondItem="inF-Tw-AC6" secondAttribute="leading" constant="10" id="DPP-fy-cBL"/>
+                            <constraint firstItem="Rni-IY-wun" firstAttribute="top" secondItem="inF-Tw-AC6" secondAttribute="top" constant="50" id="F6v-pi-j1D"/>
+                            <constraint firstItem="xpn-SM-Q9r" firstAttribute="height" secondItem="ah1-vN-GVV" secondAttribute="height" multiplier="0.75" id="JpO-jb-XaP"/>
+                            <constraint firstItem="Rni-IY-wun" firstAttribute="centerX" secondItem="ah1-vN-GVV" secondAttribute="centerX" id="b3A-Sg-CDM"/>
+                            <constraint firstItem="inF-Tw-AC6" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="xpn-SM-Q9r" secondAttribute="bottom" id="hRp-hD-Shw"/>
+                            <constraint firstItem="inF-Tw-AC6" firstAttribute="trailing" secondItem="xpn-SM-Q9r" secondAttribute="trailing" constant="10" id="lKC-VU-wyo"/>
+                            <constraint firstItem="xpn-SM-Q9r" firstAttribute="height" secondItem="ah1-vN-GVV" secondAttribute="height" multiplier="0.65" id="m7P-UC-0uk"/>
+                            <constraint firstItem="xpn-SM-Q9r" firstAttribute="top" secondItem="Rni-IY-wun" secondAttribute="bottom" constant="29.5" id="ueS-DS-6JG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="inF-Tw-AC6"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="JpO-jb-XaP"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="xpn-SM-Q9r" id="yco-eJ-nXt"/>
+                        <outlet property="last24hButton" destination="2fN-Zs-BTK" id="fUL-e7-zZj"/>
+                        <outlet property="last8hButton" destination="i4S-78-rEv" id="DNy-uT-MnZ"/>
+                        <outlet property="lastWeekButton" destination="IeX-2r-Pcj" id="euE-2Z-6My"/>
+                        <outlet property="periodStackView" destination="kj4-TY-Cqj" id="MuU-fj-Aez"/>
+                        <outlet property="stackContanerView" destination="Rni-IY-wun" id="b3q-cP-1nj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="108"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="grayBackground">
+            <color red="0.93000000715255737" green="0.93000000715255737" blue="0.93000000715255737" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
